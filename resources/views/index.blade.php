@@ -2,9 +2,16 @@
 
 @section('content')
 <div class="wrap-image">
-  <img class="responsive-img hide-on-small-only" src="{{ asset('images/banner-home.jpg') }}">
-  <img class="hide-on-med-and-up responsive-img" src="{{ asset('images/banner-home-mobile.jpg') }}">
-  <div class="btn-cta">
+  <div class="row">
+    @foreach($bands as $band)
+    <div class="col s3 band-banner" style="background-image:url(http://levi.co.id/band-hunt/public/foto/{{$band->foto}})"></div>
+    @endforeach
+  </div>
+  <div class="wrap-img-banner">
+    <img class="responsive-img hide-on-small-only" src="{{ asset('images/home-logo.png') }}">
+    <img class="hide-on-med-and-up responsive-img" src="{{ asset('images/home-logo.png') }}">
+  </div>
+  <!-- <div class="btn-cta">
     <ul>
       <li><a href="{{ route('competition') }}">LIHAT MEKANISME</a></li>
       <li><a href="{{ route('submission') }}">SUBMIT NOW</a></li>
@@ -12,7 +19,7 @@
     <ul class="btn-pop-head">
       <li><a href="{{ route('popup') }}">LEVI'S&#174; POP UP STUDIO</a></li>
     </ul>
-  </div>
+  </div> -->
 </div>
 <div class="wrap-text margin-bottom-50">
   <div class="container">

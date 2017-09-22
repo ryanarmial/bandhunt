@@ -11,10 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-  // return view('welcome');
-  return view('index', ['page' => 'home']);
-});
+// Route::get('/', function () {
+//   // return view('welcome');
+//   return view('index', ['page' => 'home']);
+// });
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/competition', function(){
   return view('competition', ['page' => 'competition']);
 })->name('competition');

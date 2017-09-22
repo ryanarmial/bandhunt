@@ -603,6 +603,19 @@ table#rekaman tr td:first-child,table#manajemen tr td:first-child{
 .btn-pop-head{
 	margin-top:30px!important;
 }
+.band-banner{
+	overflow: hidden;
+	padding: 0!important;
+	height: 225px;
+  background-color: rgba(2,52,141,0.9);
+  background-blend-mode: multiply;
+	background-size: cover;
+}
+.wrap-img-banner{
+	top: calc(50% - 62px);
+	left: calc(50% - 302px);
+	position: absolute;
+}
 @media only screen and (max-width: 600px) {
 	.side-nav{
 		padding-top: 15px;
