@@ -610,6 +610,7 @@ table#rekaman tr td:first-child,table#manajemen tr td:first-child{
   background-color: rgba(2,52,141,0.9);
   background-blend-mode: multiply;
 	background-size: cover;
+	background-position: center;
 }
 .wrap-img-banner{
 	top: calc(50% - 62px);
