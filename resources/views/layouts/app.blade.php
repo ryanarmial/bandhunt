@@ -58,7 +58,7 @@
       </li>
       <li><a class="" href="{{ route('contact') }}">CONTACT US</a></li>
       @if (Auth::guest())
-        <li><a class="" href="{{ route('login') }}">LOG IN</a></li>
+        <li><a class="" href="{{ route('login') }}">`LOG IN`</a></li>
       @else
         <li><a class="" href="#" data-activates="dropdown4">Hi {{ Auth::user()->name }}</a></li>
         <li>
@@ -150,6 +150,12 @@
                   </li>
                </ul>
               @endif
+              <li>
+                <form class="form-search" action="index.html" method="post">
+                  <input type="text" name="" value="">
+                  <button><img src="{{ asset('images/btn-search.png') }}" alt=""></button>
+                </form>
+              </li>
              </ul>
            </div>
          </nav>

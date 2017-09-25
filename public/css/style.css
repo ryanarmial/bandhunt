@@ -617,6 +617,41 @@ table#rekaman tr td:first-child,table#manajemen tr td:first-child{
 	left: calc(50% - 302px);
 	position: absolute;
 }
+.form-search{
+	padding: 10px 15px 12px;
+	position: relative;
+	display: table;
+}
+.form-search input{
+	background: #fff!important;
+	height: unset!important;
+	margin:0!important;
+	padding: 2px 5px!important;
+	float: left;
+	display: block;
+	color: #333;
+	width: 80%;
+}
+.form-search button{
+	right: 2px;
+	position: absolute;
+	display: grid;
+	padding: 6px 9px!important;
+	width: unset;
+	border: none;
+	border-radius: 5px;
+	background: rgba(101,5,26,1);
+	background: -moz-linear-gradient(top, rgba(101,5,26,1) 0%, rgba(200,10,51,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(101,5,26,1)), color-stop(100%, rgba(200,10,51,1)));
+	background: -webkit-linear-gradient(top, rgba(101,5,26,1) 0%, rgba(200,10,51,1) 100%);
+	background: -o-linear-gradient(top, rgba(101,5,26,1) 0%, rgba(200,10,51,1) 100%);
+	background: -ms-linear-gradient(top, rgba(101,5,26,1) 0%, rgba(200,10,51,1) 100%);
+	background: linear-gradient(to bottom, rgba(101,5,26,1) 0%, rgba(200,10,51,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#65051a', endColorstr='#c80a33', GradientType=0 );
+}
+.form-search button i{
+	height: unset!important;
+}
 @media only screen and (max-width: 600px) {
 	.side-nav{
 		padding-top: 15px;
