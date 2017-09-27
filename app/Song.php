@@ -11,5 +11,8 @@ class Song extends Model{
   public function band(){
     return $this->belongsTo(Band::class);
   }
+  public function votes(){
+    return $this->hasMany(Vote::class);
+  }
 
 }

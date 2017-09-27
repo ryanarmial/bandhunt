@@ -4,8 +4,7 @@
 <div class="wrap-image">
   <div class="row">
     @foreach($bands as $band)
-    <div class="col s3 band-banner" style=""></div>
-    <!-- <div class="col s3 band-banner" style="background-image:url(http://levi.co.id/band-hunt/public/foto/{{$band->foto}})"></div> -->
+    <div class="col s3 band-banner" style="background-image:url(http://levi.co.id/band-hunt/public/foto/{{$band->foto}})"></div>
     @endforeach
   </div>
   <div class="wrap-img-banner">

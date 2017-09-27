@@ -26,6 +26,8 @@ Route::get('/competition', function(){
 
 Route::get('/submission', 'SubmitController@index')->name('submission');
 Route::get('/vote', 'VoteController@index')->name('vote');
+Route::get('/vote/sort/{type}', 'VoteController@sort');
+Route::post('/vote', 'VoteController@save');
 Route::get('/dewanjuri/umi', 'JuriController@umi')->name('juriumi');
 Route::get('/dewanjuri/maliq', 'JuriController@maliq')->name('jurimaliq');
 Route::get('/dewanjuri/jan', 'JuriController@jan')->name('jurijan');
