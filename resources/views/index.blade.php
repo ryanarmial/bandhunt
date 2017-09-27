@@ -11,15 +11,15 @@
     <img class="responsive-img hide-on-small-only" src="{{ asset('images/home-logo.png') }}">
     <img class="hide-on-med-and-up responsive-img" src="{{ asset('images/home-logo.png') }}">
   </div>
-  <!-- <div class="btn-cta">
+  <div class="btn-cta">
     <ul>
-      <li><a href="{{ route('competition') }}">LIHAT MEKANISME</a></li>
-      <li><a href="{{ route('submission') }}">SUBMIT NOW</a></li>
+      <li><a href="{{ route('vote') }}">VOTE NOW</a></li>
+      <!-- <li><a href="{{ route('submission') }}">SUBMIT NOW</a></li> -->
     </ul>
-    <ul class="btn-pop-head">
+    <!-- <ul class="btn-pop-head">
       <li><a href="{{ route('popup') }}">LEVI'S&#174; POP UP STUDIO</a></li>
-    </ul>
-  </div> -->
+    </ul> -->
+  </div>
 </div>
 <div class="wrap-text margin-bottom-50">
   <div class="container">
