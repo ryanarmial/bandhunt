@@ -613,8 +613,8 @@ table#rekaman tr td:first-child,table#manajemen tr td:first-child{
 	background-position: center;
 }
 .wrap-img-banner{
-	top: calc(50% - 62px);
-	left: calc(50% - 302px);
+	top: calc(50% - 57.5px);
+	left: calc(50% - 174px);
 	position: absolute;
 }
 .form-search{
@@ -729,6 +729,14 @@ table#rekaman tr td:first-child,table#manajemen tr td:first-child{
 	font-family: 'Calibri';
 	color: #fff!important;
 	text-align: center;
+}
+#list-vote ol{
+	padding-left: 5px;
+}
+#list-vote ol li{
+	padding-left: 10px;
+	font-size: 18px;
+	font-family: 'Calibri';
 }
 @media only screen and (max-width: 600px) {
 	.side-nav{
