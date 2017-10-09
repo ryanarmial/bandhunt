@@ -26,11 +26,10 @@ class HomeController extends Controller
      */
     public function index(){
 
-      // $bands = Band::orderBy('created_at', 'desc')->take(8)->get();
       $bands = DB::table('songs')
               ->select('bands.band_name', 'songs.judul', 'bands.foto', 'songs.id')
               ->join('bands', 'bands.id', '=', 'songs.band_id')
-              ->where('songs.score', '>=', 69)
+              ->where('songs.final', '=', 1)
               ->inRandomOrder()
               ->take(8)
               ->get();

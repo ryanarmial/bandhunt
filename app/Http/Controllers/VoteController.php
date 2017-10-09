@@ -22,7 +22,7 @@ class VoteController extends Controller{
             ->where('songs.final', '1')
             ->inRandomOrder()
             // ->orderBy('songs.created_at', 'desc')
-            ->take(36)
+            ->take(12)
             ->get();
 
     // return $value;
@@ -45,7 +45,14 @@ class VoteController extends Controller{
       $song = Song::find($id);
 
       $songsave = $song->votes()->save($vote);
-      return $songsave->id;
+
+      $song = DB::table('songs')
+              ->select(DB::raw('songs.id, bands.band_name, songs.judul, bands.foto, songs.link, (Select count(*) FROM votes where votes.song_id = songs.id) as total_votes'))
+              ->join('bands', 'bands.id', '=', 'songs.band_id')
+              ->where('songs.id', $id)
+              ->get();
+
+      return response()->json(['song' => $song]);
     }else{
       return  0;
     }
@@ -62,10 +69,10 @@ class VoteController extends Controller{
       $order = 'desc';
     }elseif ($type == 'highscore') {
       $column = 'total_votes';
-      $order = 'asc';
+      $order = 'desc';
     }elseif ($type == 'lowscore') {
       $column = 'total_votes';
-      $order = 'desc';
+      $order = 'asc';
     }
 
     $songs = DB::table('songs')
