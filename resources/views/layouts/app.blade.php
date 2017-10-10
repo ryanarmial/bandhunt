@@ -78,10 +78,10 @@
       <div id="menu-top">
         <div class="container">
           <div class="row">
-            <div class="col s12 m6 levis-logo">
+            <div class="col s6 m6 levis-logo">
               <a href="{{ url('/') }}"><img class="responsive-img" src="{{ asset('images/logo-band-small.png') }}" alt=""></a>
             </div>
-            <div class="col s12 m6 universal-logo">
+            <div class="col s6 m6 universal-logo">
               <a href="https://twitter.com/Universal_Indo" target="_blank">
                 <img class="responsive-img hide-on-small-only" src="{{ asset('images/universal-new.png') }}">
                 <img class="hide-on-med-and-up responsive-img" src="{{ asset('images/universal-mobile.png') }}">
@@ -150,12 +150,12 @@
                   </li>
                </ul>
               @endif
-              <li>
+              <!-- <li>
                 <form class="form-search" action="index.html" method="post">
                   <input type="text" name="" value="">
                   <button><img src="{{ asset('images/btn-search.png') }}" alt=""></button>
                 </form>
-              </li>
+              </li> -->
              </ul>
            </div>
          </nav>
