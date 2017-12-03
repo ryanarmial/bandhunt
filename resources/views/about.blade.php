@@ -32,6 +32,11 @@
           Levi’s&#174; Band Hunt adalah audisi digital pertama untuk berburu band-band muda terbaik di Indonesia. Mengambil filosofi "Authentic Self Expression", kampanye ini bertujuan untuk mencari band independent dengan lagu asli dari genre apapun yang paling unik dan otentik di seluruh Indonesia. Kini saatnya tunjukkan pada seluruh Indonesia kalau band kamu memiliki keunikan tersendiri, berbeda dari yang lain. Raih kesempatan jadi band beken dan mendapatkan record deal dari Universal Music Indonesia, uang tunai, dan juga paket produk dari Levi’s&#174; untuk seluruh anggota band!
         </div>
       </div>
+      <div class="col s12 margin-top-50">
+        <div class="video-container">
+         <iframe src="https://www.youtube.com/embed/7UDwaCOjucQ?rel=0" frameborder="0" allowfullscreen></iframe>
+       </div>
+      </div>
     </div>
   </div>
   <!-- <div class="col s12 center-align margin-top-20">

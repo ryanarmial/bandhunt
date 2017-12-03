@@ -90,6 +90,11 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="{{$page == 'dashboard' ? 'active' : ''}}"><a href="{{url('/levis-tools')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li class="{{$page == 'top32' ? 'active' : ''}}"><a href="{{url('/levis-tools/top32')}}"><i class="fa fa-user"></i> <span>Top 32</span></a></li>
+        <li class="{{$page == 'leaderboard' ? 'active' : ''}}"><a href="{{url('/levis-tools/leaderboard')}}"><i class="fa fa-bar-chart"></i> <span>Leaderboard</span></a></li>
+        <li class="{{$page == 'chart' ? 'active' : ''}}"><a href="{{url('/levis-tools/chart')}}"><i class="fa fa-bar-chart"></i> <span>Chart Band</span></a></li>
+        <li class="{{$page == 'share' ? 'active' : ''}}"><a href="{{url('/levis-tools/share')}}"><i class="fa fa-bar-chart"></i> <span>Share Social</span></a></li>
+        <li class="{{$page == 'daily' ? 'active' : ''}}"><a href="{{url('/levis-tools/daily')}}"><i class="fa fa-bar-chart"></i> <span>Daily Chart</span></a></li>
         <li class="{{$page == 'users' ? 'active' : ''}}"><a href="{{url('/levis-tools/users')}}"><i class="fa fa-user"></i> <span>Users</span></a></li>
         <li class="{{$page == 'bands' ? 'active' : ''}}"><a href="{{url('/levis-tools/bands')}}"><i class="fa fa-user"></i> <span>Bands</span></a></li>
         <li class="{{$page == 'songs' ? 'active' : ''}}"><a href="{{url('/levis-tools/songs')}}"><i class="fa fa-music"></i> <span>Songs</span></a></li>
@@ -114,6 +119,7 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
+
 <script src="{{asset('backend/plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="{{asset('backend/bootstrap/js/bootstrap.min.js')}}"></script>

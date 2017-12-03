@@ -14,5 +14,7 @@ class Song extends Model{
   public function votes(){
     return $this->hasMany(Vote::class);
   }
-
+  public function shares(){
+    return $this->hasMany(Share::class);
+  }
 }

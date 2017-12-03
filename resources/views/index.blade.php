@@ -26,7 +26,7 @@
     <div class="row margin-bottom-50">
       <div class="video-container">
        <iframe src="https://www.youtube.com/embed/7UDwaCOjucQ?rel=0" frameborder="0" allowfullscreen></iframe>
-     </div>
+      </div>
     </div>
     <div id="band-hunt" class="row">
       <div class="col s12">

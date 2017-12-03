@@ -15,7 +15,7 @@
 //   // return view('welcome');
 //   return view('index', ['page' => 'home']);
 // });
-Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/', 'HomeController@index')->name('home');
 Route::get('/competition', function(){
   return view('competition', ['page' => 'competition']);
 })->name('competition');
@@ -25,9 +25,14 @@ Route::get('/competition', function(){
 // Route::get('/submission', 'SubmitController@index')->name('submited');
 
 Route::get('/submission', 'SubmitController@index')->name('submission');
-Route::get('/vote', 'VoteController@index')->name('vote');
+
+Route::get('/', 'VoteController@index')->name('home');
 Route::get('/vote/sort/{type}', 'VoteController@sort');
 Route::post('/vote', 'VoteController@save');
+Route::post('/share', 'VoteController@share');
+
+Route::get('/vote/{name}', 'VoteController@detail');
+
 Route::get('/dewanjuri/umi', 'JuriController@umi')->name('juriumi');
 Route::get('/dewanjuri/maliq', 'JuriController@maliq')->name('jurimaliq');
 Route::get('/dewanjuri/jan', 'JuriController@jan')->name('jurijan');
@@ -63,56 +68,38 @@ Route::get('/profil', 'ProfileController@index')->name('profil');
 
 Route::get('/run', function () {
 
-  // $exitCode = Artisan::call('migrate', [
-  //   '--force' => true,
-  // ]);
+  $exitCode = Artisan::call('migrate', [
+    '--force' => true,
+  ]);
   // Artisan::call('backup:run');
 
-  ini_set("display_errors","On");
-  error_reporting(E_ALL) ;
-  $MysqlHost 		= env('DB_HOST', '<your host>');
-  $MysqlUser 		= env('DB_USERNAME', '<your username>');
-  $MysqlPassword 	= env('DB_PASSWORD', '<your password>');
-  $databasename  	= env('DB_DATABASE', '<your db name>');
-
-  $backupDate 		= date("Y_m_d");
-  //Store inside Storage Directory
-  $backupPath 		= storage_path("daily_backup_db");
-  $filePath  		= storage_path("daily_backup_file");
-
-  $backupName = $databasename."_".$backupDate.".sql.gz" ;
-  $fileBackupName = $databasename.'_'.$backupDate;
-
-  // Take the mysql Dump
-  $dbBackup = "/usr/bin/mysqldump  --opt  -u$MysqlUser -h$MysqlHost --password=$MysqlPassword $databasename | gzip  > $backupName " ;
-  $dbOutput = shell_exec($dbBackup);
-
-  // Take the code dump
-  $fileBackupPath = "{$backupPath}$fileBackupName.tar.gz";
-  $fileOutput = shell_exec("tar -cvzpf $fileBackupPath  $filePath");
-  $mysqlBackupPath = $backupName ;
-
-});
-
-Route::get('/checkip', function () {
-
-  $client  = @$_SERVER['HTTP_CLIENT_IP'];
-  $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
-  $remote  = $_SERVER['REMOTE_ADDR'];
-
-  if(filter_var($client, FILTER_VALIDATE_IP)){
-      $ip = $client;
-  }elseif(filter_var($forward, FILTER_VALIDATE_IP)){
-      $ip = $forward;
-  }else{
-      $ip = $remote;
-  }
-  echo $ip;
+  // ini_set("display_errors","On");
+  // error_reporting(E_ALL) ;
+  // $MysqlHost 		= env('DB_HOST', '<your host>');
+  // $MysqlUser 		= env('DB_USERNAME', '<your username>');
+  // $MysqlPassword 	= env('DB_PASSWORD', '<your password>');
+  // $databasename  	= env('DB_DATABASE', '<your db name>');
+  //
+  // $backupDate 		= date("Y_m_d");
+  // //Store inside Storage Directory
+  // $backupPath 		= storage_path("daily_backup_db");
+  // $filePath  		= storage_path("daily_backup_file");
+  //
+  // $backupName = $databasename."_".$backupDate.".sql.gz" ;
+  // $fileBackupName = $databasename.'_'.$backupDate;
+  //
+  // // Take the mysql Dump
+  // $dbBackup = "/usr/bin/mysqldump  --opt  -u$MysqlUser -h$MysqlHost --password=$MysqlPassword $databasename | gzip  > $backupName " ;
+  // $dbOutput = shell_exec($dbBackup);
+  //
+  // // Take the code dump
+  // $fileBackupPath = "{$backupPath}$fileBackupName.tar.gz";
+  // $fileOutput = shell_exec("tar -cvzpf $fileBackupPath  $filePath");
+  // $mysqlBackupPath = $backupName ;
 
 });
 
-
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/redirect', 'SocialAuthController@redirect');
 Route::get('/callback', 'SocialAuthController@callback');
@@ -144,6 +131,15 @@ Route::group(['middleware' => 'admin_auth'], function(){
 
   Route::post('/levis-tools/song/score/{id}', 'Admin\SongController@updateScore');
   Route::post('/levis-tools/song/status/{id}', 'Admin\SongController@updateStatus');
+
+  Route::get('/levis-tools/top32', 'Admin\TopController@index');
+  Route::get('/levis-tools/top32/edit/{id}', 'Admin\TopController@edit')->name('edittop32');
+  Route::post('/levis-tools/top32/edit/{id}', 'Admin\TopController@update');
+
+  Route::get('/levis-tools/chart/{id?}', 'Admin\ChartController@index');
+  Route::get('/levis-tools/share/{id?}', 'Admin\ShareController@index');
+  Route::get('/levis-tools/daily/{id?}', 'Admin\DailyController@index');
+  Route::get('/levis-tools/leaderboard/{date?}', 'Admin\LeaderboardController@index');
 });
 
 
